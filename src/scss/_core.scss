@@ -37,13 +37,16 @@ $breakpoints: (
 // COLORS
 // ------------
 
-// Primary
-$red: #ff4b2b;
-$facebookBg: hsl(210, 63%, 45%);
+// Palette
+$darkRed: hsl(356, 85%, 24%);
+
+// Blue palette
+$darkBlue: hsl(215, 92%, 15%);
+$lightBlue: hsl(215, 92%, 20%);
+$darkerBlue: hsl(216, 90%, 8%);
+$darkestBlue: hsl(215, 90%, 4%);
 
 // Neutral
-$success: #2ecc71;
-$error: #e74c3c;
 $black: hsl(0, 0%, 0%);
 $white: hsl(0, 0%, 100%);
 $gray: hsl(0, 0%, 67%);
@@ -56,12 +59,14 @@ $gray: hsl(0, 0%, 67%);
 
 // Family
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 
 $fontFamilyPoppins: "Poppins", sans-serif;
 $fontFamilyMontserrat: "Montserrat", sans-serif;
-$fontFamilyJosefin: 'Josefin Sans', sans-serif;
+$fontFamilyYeseva: "Yeseva One", cursive;
+$fontFamilyAnton: "Anton", sans-serif;
 
 // Size
 $fontSizeNormal: 1rem;
@@ -139,5 +144,5 @@ ul {
 
 h1,
 h2 {
-  font-family: $fontFamilyJosefin;
+  font-family: $fontFamilyYeseva;
 }

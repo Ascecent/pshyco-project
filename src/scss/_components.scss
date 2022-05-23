@@ -2,8 +2,15 @@
 ================     COMPONENTS STYLES    =================
 =========================================================*/
 
-// Menu components
+// General styles
 
+.vertical-left-text {
+  text-orientation: sideways-right;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+// Menu component
 .header {
   border: 1px solid $gray;
   max-width: pxToRem(150);
@@ -21,11 +28,52 @@
     height: 100%;
 
     a {
-      text-orientation: sideways-right;
-      writing-mode: vertical-rl;
-      transform: rotate(180deg);
+      @extend .vertical-left-text;
       text-transform: uppercase;
       font-weight: $fontWeightBold;
+    }
+  }
+}
+
+// Home component
+.main {
+  &[data-barba-namespace="home"] {
+    .background {
+      @extend .vertical-left-text;
+      font: {
+        size: 12vw;
+        family: $fontFamilyAnton;
+      }
+      letter-spacing: pxToRem(25);
+      color: $darkBlue;
+      opacity: 0.2;
+    }
+
+    .quote-container {
+      margin-inline: 5vw;
+      margin-block-start: 15vh;
+      height: 100%;
+
+      .text {
+        padding: pxToRem(50);
+        margin-top: calc(20% - 2rem);
+        line-height: 1.3;
+        letter-spacing: pxToRem(2);
+
+        .quote {
+          font-size: pxToRem(30);
+        }
+
+        .author {
+          text-align: end;
+        }
+      }
+
+      .author-image {
+        background-size: cover;
+        background-position: center;
+        height: 100%;
+      }
     }
   }
 }
