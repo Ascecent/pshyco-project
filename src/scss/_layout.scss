@@ -1,0 +1,30 @@
+/*=========================================================
+================      LAYOUT STYLES       =================
+=========================================================*/
+
+html {
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+body {
+  display: flex;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+
+  .icon-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: pxToRem(40);
+    align-items: center;
+  }
+}

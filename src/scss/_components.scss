@@ -1,0 +1,31 @@
+/*=========================================================
+================     COMPONENTS STYLES    =================
+=========================================================*/
+
+// Menu components
+
+.header {
+  border: 1px solid $gray;
+  max-width: pxToRem(150);
+
+  .icon-container {
+    border-bottom: 1px solid $gray;
+
+    img {
+      padding: pxToRem(30);
+      width: 100%;
+    }
+  }
+
+  .menu {
+    height: 100%;
+
+    a {
+      text-orientation: sideways-right;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      text-transform: uppercase;
+      font-weight: $fontWeightBold;
+    }
+  }
+}
