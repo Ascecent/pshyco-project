@@ -119,6 +119,10 @@ $fontWeightBold: 700;
 // -------------------------------
 // GLOBAL STYLES
 // -------------------------------
+html {
+  overflow: hidden;
+}
+
 :root {
   --easing: cubic-bezier(0.5, 0.7, 0.4, 1);
 }

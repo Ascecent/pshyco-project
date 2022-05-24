@@ -41,6 +41,7 @@
     "@barba/core": "^2.9.7",
     "@barba/css": "^2.1.15",
     "@panzoom/panzoom": "^4.4.4",
+    "animate.css": "^4.1.1",
     "normalize.css": "^8.0.1"
   }
 }

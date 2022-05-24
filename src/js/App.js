@@ -1,8 +1,12 @@
 import "Styles"
+
 import Home from "./Home"
 import Psychology from "./Psychology"
+import Schools from './Schools'
+
 import barba from '@barba/core'
 import barbaCss from '@barba/css'
+
 import {
     updateMenu
 } from './utils'
@@ -27,6 +31,12 @@ barba.init({
             namespace: 'psychology',
             beforeEnter() {
                 Psychology(document.getElementById('root-svg'))
+            }
+        },
+        {
+            namespace: 'schools',
+            beforeEnter() {
+                Schools(document.getElementById('characteristics'))
             }
         }
     ],
