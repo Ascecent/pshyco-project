@@ -3,7 +3,6 @@
 =========================================================*/
 
 // General styles
-
 .vertical-left-text {
   text-orientation: sideways-right;
   writing-mode: vertical-rl;
@@ -14,13 +13,18 @@
 .header {
   border: 1px solid $gray;
   max-width: pxToRem(150);
+  min-width: pxToRem(150);
 
-  .icon-container {
+  .icon {
+    text-align: center;
     border-bottom: 1px solid $gray;
+    padding: pxToRem(30);
+    color: var(--main-color);
 
-    img {
-      padding: pxToRem(30);
-      width: 100%;
+    font: {
+      family: $fontFamilyMontserrat;
+      size: pxToRem(50);
+      weight: $fontWeightBold;
     }
   }
 
@@ -31,12 +35,87 @@
       @extend .vertical-left-text;
       text-transform: uppercase;
       font-weight: $fontWeightBold;
+
+      &.active {
+        color: $black;
+      }
     }
   }
 }
 
-// Home component
 .main {
+  position: relative;
+
+  .title {
+    font-size: pxToRem(80);
+    width: calc(100vw - 150px);
+    text-align: center;
+  }
+  // History component
+  &[data-barba-namespace="history"] {
+    .timeline-container {
+      margin-inline: pxToRem(40);
+    }
+  }
+
+  // Psychology component
+  &[data-barba-namespace="psychology"] {
+    .map-container {
+      border: 1px solid $gray;
+      box-shadow: 0 0 0 1rem 0 rgba(0, 0, 0, 0.5);
+      margin: pxToRem(100);
+      width: 100%;
+      background-color: $white;
+    }
+
+    .pattern {
+      background-color: #e5e5f7;
+      position: absolute;
+      z-index: -1;
+      width: pxToRem(100);
+      height: pxToRem(100);
+      opacity: 0.8;
+
+      &-zigzag {
+        top: pxToRem(100);
+        left: pxToRem(200);
+
+        background-image: linear-gradient(135deg, #ffffff 25%, transparent 25%),
+          linear-gradient(225deg, #ffffff 25%, transparent 25%),
+          linear-gradient(45deg, #ffffff 25%, transparent 25%),
+          linear-gradient(315deg, #ffffff 25%, var(--main-color) 25%);
+        background-position: 10px 0, 10px 0, 0 0, 0 0;
+        background-size: 20px 20px;
+        background-repeat: repeat;
+      }
+
+      &-square {
+        top: pxToRem(170);
+        left: pxToRem(68);
+
+        background-image: repeating-linear-gradient(
+            45deg,
+            var(--main-color) 25%,
+            transparent 25%,
+            transparent 75%,
+            var(--main-color) 75%,
+            var(--main-color)
+          ),
+          repeating-linear-gradient(
+            45deg,
+            var(--main-color) 25%,
+            #e5e5f7 25%,
+            #e5e5f7 75%,
+            var(--main-color) 75%,
+            var(--main-color)
+          );
+        background-position: 0 0, 10px 10px;
+        background-size: 20px 20px;
+      }
+    }
+  }
+
+  // Home component
   &[data-barba-namespace="home"] {
     .background {
       @extend .vertical-left-text;
@@ -45,35 +124,88 @@
         family: $fontFamilyAnton;
       }
       letter-spacing: pxToRem(25);
-      color: $darkBlue;
+      color: var(--main-color);
       opacity: 0.2;
     }
 
-    .quote-container {
-      margin-inline: 5vw;
-      margin-block-start: 15vh;
-      height: 100%;
-
-      .text {
-        padding: pxToRem(50);
-        margin-top: calc(20% - 2rem);
-        line-height: 1.3;
-        letter-spacing: pxToRem(2);
-
-        .quote {
-          font-size: pxToRem(30);
-        }
-
-        .author {
-          text-align: end;
-        }
+    .quote {
+      &-bg {
+        background: $white;
+        color: var(--main-color);
+        width: 100%;
+        height: pxToRem(150);
       }
 
-      .author-image {
-        background-size: cover;
-        background-position: center;
+      &-container {
+        margin-inline-end: 5vw;
+        margin-block-start: 15vh;
         height: 100%;
+
+        .text {
+          padding: pxToRem(50);
+          padding-inline-start: 7vw;
+          margin-block-start: calc(20% - 2rem);
+          line-height: 1.3;
+          letter-spacing: pxToRem(2);
+
+          .quote {
+            font-size: pxToRem(30);
+          }
+
+          .author {
+            text-align: end;
+            margin-block-end: pxToRem(40);
+          }
+        }
+
+        .author-image {
+          background-size: cover;
+          background-position: center;
+          height: 100%;
+        }
       }
     }
   }
+}
+
+// Buttons
+.button {
+  display: inline-block;
+  border: none;
+  color: var(--main-color);
+
+  padding-block: pxToRem(25);
+  padding-inline: pxToRem(100);
+
+  background-color: transparent;
+  outline: 2px solid var(--main-color);
+  font-weight: $fontWeightBold;
+  cursor: pointer;
+
+  transition: background-color 300ms ease-in-out, transform 300ms ease-in-out,
+    color 300ms ease-in-out;
+
+  &:hover {
+    background-color: var(--main-color);
+    color: $white;
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+}
+
+// Transition component
+.transition {
+  position: absolute;
+  width: calc(100vw - 170px);
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--main-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-100%);
+  z-index: 10;
 }

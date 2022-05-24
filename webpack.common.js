@@ -57,15 +57,21 @@ const plugins = [
         filename: 'index.html',
         showErrors: true,
         template: "./src/index.html",
-        chunks: ['app'],
-        exclude: ['home']
     }),
     new HtmlWebpackPlugin({
-        filename: 'home.html',
+        filename: 'psychology.html',
         showErrors: true,
-        template: './src/views/home.html',
-        chunks: ['home'],
-        excludeChunks: ['app']
+        template: "./src/views/psychology.html",
+    }),
+    new HtmlWebpackPlugin({
+        filename: 'schools.html',
+        showErrors: true,
+        template: "./src/views/schools.html",
+    }),
+    new HtmlWebpackPlugin({
+        filename: 'history.html',
+        showErrors: true,
+        template: "./src/views/history.html",
     }),
     new MiniCssExtractPlugin({
         filename: "[name][contenthash].bundle.css",
@@ -77,10 +83,7 @@ const plugins = [
 const rules = [rulesForSassStyles, rulesForAssets];
 
 module.exports = {
-    entry: {
-        home: './src/js/Home.js',
-        app: './src/js/App.js',
-    },
+    entry: './src/js/App.js',
     output: {
         filename: "[name][contenthash].bundle.js",
         path: path.resolve(__dirname, "build"),

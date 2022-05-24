@@ -15,11 +15,6 @@ body {
   display: flex;
   flex-direction: column;
 
-  .icon-container {
-    display: flex;
-    justify-content: center;
-  }
-
   .menu {
     display: flex;
     flex-direction: column;
@@ -40,9 +35,21 @@ body {
       left: 3vw;
     }
 
-    .quote-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+    .quote {
+      &-bg {
+        position: absolute;
+        bottom: 18vh;
+        left: 0;
+      }
+
+      &-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .text {
+          position: relative;
+        }
+      }
     }
   }
 }
