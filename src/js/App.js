@@ -43,7 +43,7 @@ barba.init({
     transitions: [{
         name: 'cover',
         to: {
-            namespace: ['home', 'history', 'psychology', 'schools'],
+            namespace: ['home', 'history', 'psychology', 'schools', 'interviews'],
         },
         enter() {},
         leave() {},

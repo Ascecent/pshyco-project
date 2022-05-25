@@ -27,6 +27,22 @@ body {
 .main {
   position: relative;
 
+  &[data-barba-namespace="interviews"] {
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    .interviews-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &[data-barba-namespace="history"] {
+    overflow-y: scroll;
+    overflow-y: hidden;
+  }
+
   &[data-barba-namespace="home"] {
     .background {
       position: absolute;
@@ -50,6 +66,42 @@ body {
           position: relative;
         }
       }
+    }
+  }
+
+  &[data-barba-namespace="schools"] {
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    .characteristics {
+      display: grid;
+      gap: pxToRem(30);
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: center;
+      align-items: stretch;
+    }
+
+    .feature {
+      &-button {
+        display: flex;
+        align-items: center;
+        gap: pxToRem(35);
+      }
+    }
+  }
+}
+
+// Swal html
+.specific-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: pxToRem(30);
+
+  .author {
+    &-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      place-items: center;
     }
   }
 }

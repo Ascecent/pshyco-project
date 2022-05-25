@@ -14,6 +14,7 @@
   border: 1px solid $gray;
   max-width: pxToRem(150);
   min-width: pxToRem(150);
+  min-height: 100vh;
 
   .icon {
     text-align: center;
@@ -51,6 +52,85 @@
     width: calc(100vw - 150px);
     text-align: center;
   }
+
+  &[data-barba-namespace="interviews"] {
+    .interviews-container {
+      border-left: 1px solid #000;
+      border-top: 1px solid #000;
+      border-bottom: 1px solid #000;
+      margin-bottom: pxToRem(70);
+      padding: pxToRem(50);
+
+      width: 100%;
+      margin-inline: pxToRem(50);
+
+      iframe {
+        width: pxToRem(1200);
+        height: pxToRem(700);
+      }
+    }
+
+    .interview {
+      &-container:not(:nth-child(1)) {
+        margin-block-start: pxToRem(50);
+      }
+
+      &-title {
+        font-size: pxToRem(35);
+      }
+    }
+  }
+
+  // History component
+  &[data-barba-namespace="schools"] {
+    .characteristics {
+      padding-inline: pxToRem(50);
+      margin-inline: pxToRem(30);
+      margin-block-end: pxToRem(60);
+    }
+
+    .feature {
+      &-button {
+        max-height: pxToRem(200);
+        background: $white;
+        color: $black;
+        cursor: pointer;
+        border-radius: pxToRem(20);
+        padding: 0;
+        overflow: hidden;
+        border: none;
+        outline: 1px solid var(--main-color);
+        font: {
+          family: $fontFamilyYeseva;
+          weight: $fontWeightBold;
+          size: pxToRem(25);
+        }
+
+        transition: transform 300ms ease-in-out, background 300ms ease-in-out,
+          color 300ms ease-in-out;
+
+        &:hover {
+          background: var(--main-color);
+          color: $white;
+        }
+
+        &:active {
+          transform: scale(0.9);
+        }
+      }
+
+      &-image-container {
+        width: pxToRem(250);
+        height: 100%;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+
   // History component
   &[data-barba-namespace="history"] {
     .timeline-container {
@@ -65,7 +145,7 @@
       box-shadow: 0 0 0 1rem 0 rgba(0, 0, 0, 0.5);
       margin: pxToRem(100);
       width: 100%;
-      background-color: $white;
+      background-color: hsl(0, 0%, 12%);
     }
 
     .pattern {
@@ -212,4 +292,64 @@
   justify-content: center;
   transform: translateY(-100%);
   z-index: 10;
+}
+
+// Swal table component
+.swal2-title {
+  font: {
+    family: $fontFamilyMontserrat !important;
+    size: pxToRem(40) !important;
+  }
+  color: $black !important;
+  text-transform: uppercase !important;
+  margin-block-end: pxToRem(40) !important;
+}
+
+.specific-features {
+  width: 100%;
+
+  .feature {
+    &-container {
+      background-color: var(--main-color);
+      color: $white;
+      border-radius: pxToRem(20);
+      padding: pxToRem(10);
+
+      .author {
+        &-container {
+          margin-block-end: pxToRem(20);
+        }
+
+        &-image-container {
+          border-radius: 50%;
+          width: pxToRem(150);
+          height: pxToRem(150);
+          overflow: hidden;
+
+          img {
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+
+    &-title {
+      font: {
+        size: pxToRem(25);
+        weight: $fontWeightBold;
+      }
+
+      padding-block-end: pxToRem(10);
+      border-bottom: 1px solid $white;
+    }
+
+    &-image {
+      pointer-events: none;
+    }
+
+    ul {
+      padding: pxToRem(10);
+    }
+  }
 }

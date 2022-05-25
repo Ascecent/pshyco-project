@@ -14,7 +14,7 @@ const rulesForAssets = {
     test: /\.(png|svg|jpg|jpeg|gif)$/i,
     exclude: "/node_modules",
     type: "asset/resource",
-};
+}
 
 const rulesForSassStyles = {
     test: /\.(scss)$/,
@@ -46,6 +46,30 @@ const rulesForSassStyles = {
     ]
 };
 
+const rulesForCssStyles = {
+    test: /\.(css)$/,
+    use: [{
+            loader: MiniCssExtractPlugin.loader,
+        },
+        {
+            loader: 'css-loader',
+            options: {
+                url: false,
+            },
+        },
+        {
+            loader: 'postcss-loader',
+            options: {
+                postcssOptions: {
+                    plugins: [
+                        ['autoprefixer'],
+                    ],
+                },
+            }
+        }
+    ]
+}
+
 // -------------------------------
 
 // -------------------------------
@@ -73,6 +97,11 @@ const plugins = [
         showErrors: true,
         template: "./src/views/history.html",
     }),
+    new HtmlWebpackPlugin({
+        filename: 'interviews.html',
+        showErrors: true,
+        template: "./src/views/interviews.html",
+    }),
     new MiniCssExtractPlugin({
         filename: "[name][contenthash].bundle.css",
     }),
@@ -80,7 +109,7 @@ const plugins = [
 
 // -------------------------------
 
-const rules = [rulesForSassStyles, rulesForAssets];
+const rules = [rulesForSassStyles, rulesForAssets, rulesForCssStyles];
 
 module.exports = {
     entry: './src/js/App.js',
