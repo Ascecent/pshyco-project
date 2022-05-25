@@ -1,5 +1,5 @@
 import "Styles"
-
+import maslow from "Images/maslow.svg"
 import Home from "./Home"
 import Psychology from "./Psychology"
 import Schools from './Schools'
@@ -21,6 +21,8 @@ barba.init({
     views: [{
             namespace: 'home',
             beforeEnter() {
+                document.getElementById('author-image').style.backgroundImage = `url(${maslow})`
+
                 Home(document.getElementById('quote'),
                     document.getElementById('author'),
                     document.getElementById('author-image'),

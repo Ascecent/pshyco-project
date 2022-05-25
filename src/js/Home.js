@@ -1,6 +1,5 @@
 import chomsky from "Images/chomsky.svg"
 import bateson from "Images/bateson.svg"
-import pavlov from "Images/pavlov.svg"
 import maslow from "Images/maslow.svg"
 import skinner from "Images/skinner.svg"
 
@@ -55,14 +54,6 @@ function getData() {
                 'Si examinamos los deseos que, por término medio, tenemos en la vida cotidiana, comprobamos que tienen una característica importante: son generalmente medios para alcanzar un fin más que fines en sí mismo'
             ],
             image: maslow,
-        },
-        {
-            author: 'Iván Pávlov',
-            phrases: [
-                'Nunca pienses que lo sabes todo. Por muy alto que te valores, ten siempre el coraje de decirte a ti mismo: soy un ignorante',
-                'Condiciona a la gente para que no espere nada y tendrás a todos excitados con la mínima cosa que les ofrezcas.'
-            ],
-            image: pavlov,
         }
     ]
 
