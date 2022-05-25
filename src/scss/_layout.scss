@@ -46,7 +46,7 @@ body {
 
   &[data-barba-namespace="history"] {
     overflow-y: scroll;
-    overflow-y: hidden;
+    overflow-x: hidden;
   }
 
   &[data-barba-namespace="home"] {
